@@ -23,7 +23,7 @@ import {
 } from 'react-native';
 
 import PropTypes from 'prop-types';
-
+import Icon from 'react-native-vector-icons/dist/MaterialIcons'; 
 const TOUCHABLE_ELEMENTS = [
   'TouchableHighlight',
   'TouchableOpacity',
@@ -170,13 +170,16 @@ export default class ModalDropdown extends Component {
       <TouchableOpacity ref={button => this._button = button}
                         disabled={disabled}
                         accessible={accessible}
+                       
                         onPress={this._onButtonPress}
       >
         {
           children ||
           (
             <View style={styles.button}>
+            <Icon name='keyboard-arrow-down' size={30} color='#646464' />
               <Text style={[styles.buttonText, textStyle]}
+              
               >
                 {buttonText}
               </Text>
@@ -399,10 +402,15 @@ export default class ModalDropdown extends Component {
 
 const styles = StyleSheet.create({
   button: {
-    justifyContent: 'center'
+    justifyContent: 'center',
+    flexDirection: 'row',
+    marginHorizontal: 20,
+    height:30,
   },
   buttonText: {
-    fontSize: 12
+    fontSize: 12,
+    
+    
   },
   modal: {
     flexGrow: 1
